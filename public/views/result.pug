@@ -1,0 +1,123 @@
+doctype html
+html
+    head
+        meta(charset='utf-8')
+        | 	
+        //- meta(http-equiv='X-UA-Compatible', content='IE=edge')
+        | 	
+        meta(name='viewport', content='width=device-width, initial-scale=1')
+        | 	
+        title
+        // 부트스트랩
+        link(rel='icon', href='../image/favicon.ico')
+        |
+        link(rel='stylesheet', href='css/custom.css')
+        |
+        link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css')
+    body
+        nav.navbar.navbar-inverse.navbar-fixed-top
+            .container0
+                .nav-bar-header
+                    //- button.navbar-toggle.collapsed(type='button', data-toggle='collapse', data-target='#navbar', aria-expanded='false', aria-controls='navbar')
+                    //-     span.sr-only 
+                    //-     | 					
+                    //-     span.icon-bar
+                    //-     | 					
+                    //-     span.icon-bar
+                    //-     | 					
+                    //-     span.icon-bar
+                    //- |
+                    a.navbar-brand(href='/main')
+                         img.d-inline-block.align-top(src='/image/logo.png', width='75', height='35', alt='')
+                |
+                #navbar.navbar-collapse.collapes
+                    //- form.navbar-form.navbar-right
+                    //-     .form-group
+                    //-         input.form-control.input-sm(type='text', placeholder='Email', size='20')
+                    //-     |
+                    //-     .form-group
+                    //-         input.form-control.input-sm(type='password', placeholder='Password', size='15')
+                    //-     |
+                    //-     button.btn.btn-success.btn-sm(type='button') Sign in
+        .jumbotron
+            //- img.img-responsive.center-block(src='image/image1.jpg', alt='', width="700", height="250")
+            .container1
+                h1 M-WDS
+                |
+                p.text-muted
+                    | Malicious web detection system based on Machine Learning
+                    p.text-success
+                    | ||   Pattern Scraping   ||   Exploit Detecting   ||
+                |
+                p
+                    //- a.btn.btn-warning.btn-sm(href='#', role='button') Learn more »
+        .container
+            .row
+                .col-md-4
+                    script.
+                        alert('분석 완료..!');
+                    a.button.btn.btn-warning.btn-sm(href='/',role='button') Research
+                    |
+                    a.button.btn.btn-success.btn-sm(role='alert') Download
+                        strong  (업데이트 예정)
+                    |
+                    hr
+                    |
+                    h4 » Suspicious websites list
+                    |
+                    table.table
+                        thead.thead-dark
+                            tr
+                                //- th(align='center') Index
+                                //- //- td
+                                //- td(colspan='3' align='center') URL
+                                th Index
+                                th URL
+                                th Pattern
+                                th Spot
+                                th Safe
+                        |
+                        tbody.thead-light
+                            - if(url)
+                                -for (var i =0; i < url.length; i++)
+                                    - if(url[i].detect == 'safe')
+                                        tr.primary
+                                            td= i
+                                            td= url[i].url
+                                            //- td= url[i].pt
+                                            td='Private'
+                                            td= url[i].spot
+                                            td= url[i].detect
+                                    - else
+                                        tr.danger
+                                            td= i
+                                            td= url[i].url
+                                            //- td= url[i].pt
+                                            td='Private'
+                                            td= url[i].spot
+                                            td= url[i].detect
+                            - else
+                                tr.fuck
+                                    td.success='N'
+                                    td.success='O'
+                                    td.success='P'
+                                    td.success='E'
+                        |
+
+                    //- each list in url
+                    //-     ul.table-active= list
+                    //- form(action='/result',method='post')
+                    //-     .form-group
+                    //-         .input-group
+                    //-             input#text.form-contorl.input-sm.center-block(type='text', placeholder='https://sface.info/',size='80', name = 'url')
+                    //-             .input-group-btn
+                    //-                 button.btn.btn-success.btn-sm.center-block(type='submit') Search
+                |
+            |
+            hr
+            |
+            footer
+                p © 2018 Sface Corporation. All rights reserved.
+        script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js')
+        script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js')
+        

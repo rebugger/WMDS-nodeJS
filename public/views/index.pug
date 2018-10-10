@@ -1,0 +1,243 @@
+doctype html
+html
+    head
+        meta(charset='utf-8')
+        //- meta(http-equiv='X-UA-Compatible', content='IE=edge')
+        //- | 	
+        meta(name="google-site-verification" content="XuTjg7vBdOPoHMsHH-HvtbLRj_4FQ8qg0-y-AKBbIX0")
+        meta(name='viewport', content='width=device-width, initial-scale=1')
+        title M-WDS
+        link(rel='icon', href='../image/favicon.ico')
+        link(rel='stylesheet', href='css/custom.css')
+        link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css')
+    body
+        nav.navbar.navbar-inverse.navbar-fixed-top
+            .container0
+                .nav-bar-header
+                    //- button.navbar-toggle.collapsed(type='button', data-toggle='collapse', data-target='#navbar', aria-expanded='false', aria-controls='navbar')
+                    //-     span.sr-only 
+                    //-     | 					
+                    //-     span.icon-bar
+                    //-     | 					
+                    //-     span.icon-bar
+                    //-     | 					
+                    //-     span.icon-bar
+                    //- |
+                    a.navbar-brand(href='/main')
+                         img.d-inline-block.align-top(src='/image/logo.png', width='75', height='35', alt='')
+                |
+                #navbar.navbar-collapse.collapes
+                //-     form.navbar-form.navbar-right
+                //-         .form-group
+                //-             input.form-control.input-sm(type='text', placeholder='Email', size='20')
+                //-         |
+                //-         .form-group
+                //-             input.form-control.input-sm(type='password', placeholder='Password', size='15')
+                //-         |
+                //-         button.btn.btn-success.btn-sm(type='button') Sign in
+        .jumbotron.vertical-center
+            //- img.img-responsive.center-block(src='image/image1.jpg', alt='', width="700", height="250")
+            .container1
+                h1(style='color : black') M-WDS
+                |
+                p.text-muted
+                    | Malicious web detection system based on Machine Learning
+                    p.text-success
+                    | ||   Pattern Scraping   ||   Exploit Detecting   ||
+                |
+                p
+                    a.btn.btn-sm(href='/main', role='button', style='color :gray') Learn more »
+                    a.btn.btn-sm(role='button', style='color : gray') Download »
+                        
+        .container
+            .row
+                .col-md-4.col-md-offset-4
+                br
+                br
+                br
+
+                .col-md-4.col-md-offset-3
+                    form#form_data.right(action='/result',method='post')
+                        .form-group
+                            .input-group
+                                input#text.form-contorl.input-sm.center-block(type='text', placeholder='https://sface.info/',size='80', name = 'url' onkeydown='JavaScript:Enter_Check();')
+                                .input-group-btn
+                                    button#bt.btn.btn-sm.center-block(type='button',style='color : white;background-color: #fd1e67') Search
+                            #myProgress.progress.progress-bar-striped.progress-bar-animated(role='progressbar', style = 'display: none')
+                                #myBar
+                                        
+                                        //- alert.alert-warning(role='alert')
+                                        //-     strong Warning!
+                                        //-     |  Better check yourself, you're 
+                                        //-     a.alert-link(href='#') not looking too good
+                                        //-     | .
+                                        //- | 	
+                                        //- .alert.alert-danger(role='alert')
+                                        //-     strong incorrect url
+                                        //-     |  
+                                        //-     a.alert-link(href='#') input url in http || https 
+                                        //-     |  and try submitting again.
+                .col-md-4.col-md-offset-4
+                    br
+                    br
+                    br
+                    - if(message == 'error')
+                        .alert.alert-danger.alert-lg(role='alert', align='center') 해당 URL은 접근 할 수 없는 페이지입니다.
+                .col-md-4.col-md-offset-4
+                    hr  
+                    h4.text-center(style='color : #d9570d') Disclaimer
+                    |
+                    p.text-center(style='color : gray') This free  service is provided "AS IS" and does not guarantee 100% accuracy. Sface has no responsibility for detecting or not detecting malicious code on this website or any other websites. 
+                    |
+                    hr
+                |
+                //- .col-md-4.col-md-offset-3
+                //-     h2(style='color : black') Bitcoin-miner »
+                //-     |
+                //-     p(style='color : gray')
+                //-         | Bitcoin-miner suspicious websites list
+                //-     |
+                //-     p
+                //-         a.btn.btn-default(href='/miner', role='button') View detail >>
+                //- |
+                //- .col-md-4
+                //-     h2 Maliciou URL list »
+                //-     |
+                //-     p(style='color : gray')
+                //-         | Here you can find lists of suspicious malware infected urls
+                //-     |
+                //-     p
+                //-         a.btn.btn-default(href='/malurl', role='button') View detail >>
+            |
+            hr
+            |
+            footer
+                p © 2018 Sface Corporation. All rights reserved.
+        script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js')
+        script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js')
+        script.
+            function button_click(){
+                fuck = document.getElementById('text').value
+                if(fuck.indexOf('http') !== 0){
+                    alert('정확한 URL 을 집어 넣어주세요 (http:///https://)')
+                }
+            }
+
+        script.
+            function Enter_Check(){
+                if(event.keyCode == 13){
+                    move()
+                    document.getElementById('form_data').submit();
+
+                    function move(){
+                        var fuck = document.getElementById('text').value
+                        if(fuck.indexOf('http') !== 0){
+                            alert('정확한 URL 을 집어 넣어주세요 (http:///https://)')
+                        }
+                        else{
+                            var x = document.getElementById('text');
+                            var y = document.getElementById('myProgress');
+                            var z = document.getElementById('bt')
+
+                            console.log('??')
+
+                            if(x.style.display==='none'){
+                                x.style.display = 'block';
+                            } else{
+                                x.style.display = 'none';
+                                y.style.display = 'block';
+                                z.style.display = 'none';    
+
+                                var elem = document.getElementById("myBar"); 
+                                var width = 0;
+                                console.log('??',elem)
+                                var id = setInterval(frame, 1000);
+                            }
+                        }
+                        function frame() {
+                            if (width == 150) {
+                                console.log('?');
+                                clearInterval(id);
+                                
+                                
+                            } else {
+                                width++; 
+                                elem.style.width = width + '%'; 
+                                //- document.getElementById('')
+                            }
+                        }
+                    }
+                }
+            }
+        script.
+            window.onload = function() {
+                            document.getElementById('bt').onclick = function() {
+                                move()
+                                document.getElementById('form_data').submit();
+                                return false;
+                            }
+                        }
+            function move(){
+                var fuck = document.getElementById('text').value
+                if(fuck.indexOf('http') !== 0){
+                    alert('정확한 URL 을 집어 넣어주세요 (http:///https://)')
+                }
+                else{
+                    var x = document.getElementById('text');
+                    var y = document.getElementById('myProgress');
+                    var z = document.getElementById('bt')
+
+                    console.log('??')
+
+                    if(x.style.display==='none'){
+                        x.style.display = 'block';
+                    } else{
+                        x.style.display = 'none';
+                        y.style.display = 'block';
+                        z.style.display = 'none';    
+
+                        var elem = document.getElementById("myBar"); 
+                        var width = 0;
+                        console.log('??',elem)
+                        var id = setInterval(frame, 2000);
+                    }
+                }
+                function frame() {
+                    if (width == 150) {
+                        console.log('?');
+                        clearInterval(id);
+                        
+                        
+                    } else {
+                        width++; 
+                        elem.style.width = width + '%'; 
+                        //- document.getElementById('')
+                    }
+                }
+            }
+
+
+        //- script.
+        //-     $('#bt').click(function(e){
+        //-         e.preventDefault();
+        //-         console.log('select_link clicked');
+
+        //-         var data = {}
+        //-         data.title = 'title';
+        //-         data.message = 'message';
+
+        //-         $.ajax({
+        //-             type: 'POST',
+        //-             //- data: JSON.stringify(data),
+        //-             //- contentType: 'application/json',
+        //-             dataType : 'html',
+        //-             url: 'http://localhost/result',
+        //-         })
+        //-         .done(function(data){
+        //-                 console.log('success');
+        //-                 console.log(JSON.stringify(data));
+        //-         })
+        //-         .fail(function(){
+        //-             console.log('error');
+        //-         })
+        //-     })

@@ -1,0 +1,15 @@
+doctype html
+html
+    head
+        pre#incremental
+        script(src="//code.jquery.com/jquery-1.11.2.min.js")
+        script(src='/socket.io/socket.io.js')
+    body
+        script.
+            $(document).ready(function(){
+                var socket = io.connect()
+                socket.on('update-value', function(value){
+                    //- console.log('recieved');
+                    $('#incremental').html(value);
+                })
+            })

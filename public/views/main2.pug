@@ -1,0 +1,162 @@
+doctype html
+html(lang='en')
+    head
+        meta(charset='UTF-8')
+        //- meta(http-equiv='X-UA-Compatible', content='IE=edge')
+        meta(name='viewport', content='width=device-width, initial-scale=1')
+        meta(name='description', content='')
+        meta(name='author', content='')
+        link(rel='icon', href='../image/favicon.ico')
+        title sface main
+        link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css')
+        link(href='/css/dashboard.css', rel='stylesheet')
+    body(data-spy='scroll', data-target='.scrollspy')
+        nav.navbar.navbar-inverse.navbar-fixed-top
+            .container-fluid
+                .navbar-header
+                    button.navbar-toggle.collapsed(type='button', data-toggle='collapse', data-target='#navbar', aria-expanded='false', aria-controls='navbar')
+                        span.sr-only Toggle navigation
+                        span.icon-bar
+                        span.icon-bar
+                        span.icon-bar
+                    a.navbar-brand(href='/main') SFACE
+                        //- img.d-inline-block.align-top(src='/image/logo.png', width = '75', height = '35', alt='')
+                #navbar.navbar-collapse.collapse
+                    ul.nav.navbar-nav.navbar-right
+                        li
+                            a(href='/') URL Scan
+                        li
+                            a(href='/miner') Bitcoin Miner
+                        li
+                            a(href='#') File Analytics
+                        li
+                            a(href='#') Help
+                    form.navbar-form.navbar-right(action='/search', method='post')
+                        input.form-control(type='text', placeholder='Search...', name = 'id')
+                        button.form-control.btn.btn-defalut.test(type='submit',style='color : white; background-color: #1db989') Search
+        .container-fluid
+            .row.text-center
+                //- .col-sm-8.col-sm-offset-2.col-md-8.col-md-offset-2
+                .col-sm-12.col-md-12
+                    #myCarousel.carousel.slide(data-ride='carousel')
+                        // Indicators
+                        ol.carousel-indicators
+                            li.active(data-target='#myCarousel', data-slide-to='0')
+                            li(data-target='#myCarousel', data-slide-to='1')
+                            li(data-target='#myCarousel', data-slide-to='2')
+                        // Wrapper for slides
+                        .carousel-inner
+                            .item.active
+                                img(src='../image/sface_logo.png', alt='Chania')
+                                .carousel-caption
+                                    h3 Streaming Face
+                                    p Sface is always so much fun!
+                            .item
+                                img(src='../image/main_banner1.jpg', alt='Chicago')
+                                .carousel-caption
+                                    h3 Find
+                                    p Find malicious javascript code in your websites
+                            .item
+                                img(src='../image/main_banner2.png', alt='New York')
+                                .carousel-caption
+                                    h3 protect
+                                    p Detecting Malicious Javascript code.
+                        // Left and right controls
+                        a.left.carousel-control(href='#myCarousel', data-slide='prev')
+                            span.glyphicon.glyphicon-chevron-left
+                            span.sr-only Previous
+                        a.right.carousel-control(href='#myCarousel', data-slide='next')
+                            span.glyphicon.glyphicon-chevron-right
+                            span.sr-only Next
+        hr
+        .container-fluid
+            .row.link-icon
+                .col-sm-8.col-sm-offset-2.col-md-8.col-md-offset-2
+                    p#main_text Now, The web surfer needs to make sure that this website is safe and functional
+                    p#sub_text select and then press the icon once to go to the next page in the websites
+                    p#sub_text2 아래 아이콘 클릭시 해당 사이트로 이동합니다.
+                    hr
+                .col-xs-4(align='center')
+                    a(href='/')
+                        img(src='./image/main_shield.png')
+                    h3(style='color : #82ceed') Web Check
+                    p(style='color : gray') sface are inform of your visiting website security through effective website security monitoring. Continuously monitor for website malware and threats.
+                .col-xs-4(align='center')
+                    a(href='/miner')
+                        img(src='./image/main_bitcoin.png')
+                    h3(style='color : #fa8072') Miner
+                    p(style='color : gray') bitcoin mining malware are rising in popularity at an exponential rate. In case the culprit is some website which is using your web browser to mine crypto coins, you can find that out easily
+                .col-xs-4(align='center')
+                    a(href='/malurl')
+                        img(src='./image/main_crawler.png')
+                    h3(style='color : #ffd700') Web Crawler
+                    p(style='color : gray') sface website cralwer intelligently crawl our website and identify possible infections and malicious script on your website. 
+                |
+                .col-xs-8.col-xs-offset-2
+                    hr
+                |
+                .col-xs-4(align='center')
+                    img(src='./image/database.png')
+                    h3(style='color : #a3cca3') Database
+                    p(style='color : gray') Every day we update database of our website scanner and add new features to keep your website safe. 
+                .col-xs-4(align='center')
+                    img(src='./image/main_smartphone.png')
+                    h3(style='color : #d87083') Mobile Push Message
+                    p(style='color : gray') we inform an automatic platform that mines Website to provide real-time alerts of malware propagation.
+                .col-xs-4(align='center')
+                    img(src='./image/main_humanoid.png')
+                    h3(style='color : #696969') Machine Learning
+                    p(style='color : gray') To perform the classification of a benign and a malicious code, machine learning classifiers are used in detection through learning from patterns.
+            .row
+                hr
+                br
+                br
+                hr
+                h3(style='color : #ff8c09') &nbsp&nbsp&nbsp sface.
+                .col-xs-3(align='center',width='25%', height='25%')
+                    img#test(src='./image/main_team1.jpeg')
+                    hr
+                .col-xs-3(align='center', width='25%', height='25%')
+                    img(src='./image/main_team6.jpeg')
+                    hr
+                .col-xs-3(align='center', width='25%', height='25%')
+                    img(src='./image/main_team7.jpeg')
+                    hr
+                .col-xs-3(align='center', width='25%', height='25%')
+                    img(src='./image/main_team2.jpeg')
+                    hr
+                .col-xs-3(align='center', width='25%', height='25%')
+                    img(src='./image/main_team3.jpeg')
+                    hr
+                .col-xs-3(align='center', width='25%', height='25%')
+                    img(src='./image/main_team4.jpeg')
+                    hr
+                .col-xs-3(align='center', width='25%', height='25%')
+                    img(src='./image/main_team5.jpeg')
+                    hr
+                .col-xs-3(align='center', width='25%', height='25%')
+                    br
+                    br
+                    br
+                    br
+                    br
+                    br
+                    br
+                    br
+                    br
+                    br
+                    img(src='./image/sface_logo2.jpeg')
+                
+            |
+            hr
+            |
+            footer
+                .row
+                    .col-xs-4(width='30%', height='30%')
+                        img(src='../image/sface_logo2.jpeg',width='30%', height='30%')
+                        p &nbsp&nbsp&nbsp&nbsp&nbsp © 2018 Sface Corporation. All rights reserved.
+                        | &nbsp&nbsp&nbsp&nbsp&nbsp 12, Gangnam-daero 65-gil, Seocho-gu, Seoul,  Republic of Korea
+            script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js')
+            script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js')
+    //- script.
+    //-     $('carouselExampleIndicators').carousel()

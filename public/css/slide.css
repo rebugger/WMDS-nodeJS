@@ -1,0 +1,9 @@
+/* Slideshow container */
+
+.row {
+    background-color: white;
+    color: white;
+    /* border-bottom-color: white;
+    border-bottom-color: white; */
+    border-bottom-width: 10px    
+}

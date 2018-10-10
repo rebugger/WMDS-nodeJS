@@ -1,0 +1,142 @@
+doctype html
+html(lang='en')
+    head
+        meta(charset='UTF-8')
+        //- meta(http-equiv='X-UA-Compatible', content='IE=edge')
+        meta(name='viewport', content='width=device-width, initial-scale=1')
+        meta(name='description', content='')
+        meta(name='author', content='')
+        link(rel='icon', href='../image/favicon.ico')
+        title sface main
+        link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css')
+        link(href='/css/dashboard.css', rel='stylesheet')
+    body(data-spy='scroll', data-target='.scrollspy')
+        nav.navbar.navbar-inverse.navbar-fixed-top
+            .container-fluid
+                .navbar-header
+                    button.navbar-toggle.collapsed(type='button', data-toggle='collapse', data-target='#navbar', aria-expanded='false', aria-controls='navbar')
+                        span.sr-only Toggle navigation
+                        span.icon-bar
+                        span.icon-bar
+                        span.icon-bar
+                    a.navbar-brand(href='/main') SFACE
+                        //- img.d-inline-block.align-top(src='/image/logo.png', width = '75', height = '35', alt='')
+                #navbar.navbar-collapse.collapse
+                    ul.nav.navbar-nav.navbar-right
+                        li
+                            a(href='/') URL Scan
+                        li
+                            a(href='/miner') Bitcoin Miner
+                        li
+                            a(href='#') File Analytics
+                        li
+                            a(href='#') Help
+                    form.navbar-form.navbar-right(action='/search', method='post')
+                        input.form-control(type='text', placeholder='Search...', name = 'id')
+                        button.form-control.btn.btn-defalut.test(type='submit',style='color : white; background-color: #1db989') Search
+        .container-fluid
+            .row
+                .col-sm-3.col-sm-1.sidebar
+                    ul.nav.nav-sidebar
+                        li
+                            a(href='/main') Main 
+                        li
+                            a(href='/') Url Scan
+                        li
+                            a(href='/miner')
+                                | Bitcoin Miner
+                                
+                        li
+                            a(href='/malurl') Malicious Url
+                        li.active
+                            a(href='/search_result') Search Results
+                                span.sr-only (current)
+                        li
+                            a(href='#') Product
+                .col-sm-9.col-sm-offset-1.col-md-10.col-md-offset-1.main
+                    h1.page-header Search Results
+                    - if(tp=='search')
+                        h4 index Results
+                        hr
+                        table#table.table
+                            thead.thead-dark
+                                th.text-center #
+                                th.text-center Time
+                                th.text-left Url
+                                th.text-left Pattern
+                                th.text-left Identifier
+                                th.text-left Source
+                                th.text-left Link
+                                    
+                            tbody.thead-light
+                                tr.fuck
+                                    td=0
+                                    td=url.time
+                                    td=url.url
+                                    td=url.pattern
+                                    td=url.identifier
+                                    td
+                                        .text-center
+                                            //- a#source_view(action='/click' name=url[i].identifier) source
+                                            //-     button.btn.btn-info.btn-lg(type='submit')
+                                            a#source_view.btn.btn-link.btn-sm(href='/click/'+url.identifier,role='submit',style='color : #1db090')
+                                                p source
+                                                |  code
+                                    td
+                                        .text-center
+                                            a#link_view.btn.btn-link.btn-sm(href=url.url, role='submit',style='color : red')
+                                                p link
+                                                | page
+                                                //- button.btn.btn-warning.btn-lg(type='submit')
+                        hr
+                    - else
+                        //- h2 fuck3
+                        hr
+                        h2 search Results: #{data}
+                        table#table.table
+                            thead.thead-dark
+                                tr
+                                    th.text-center #
+                                    th.text-center Time
+                                    th.text-left Url
+                                    th.text-left Pattern
+                                    th.text-left Identifier
+                                    th.text-left Source
+                                    th.text-left Link
+                            |
+                            tbody.thead-light
+                                - if(url)
+                                    - for(var i = 0; i < url.length; i++)
+                                        tr.fuck
+                                            td.text-center= i
+                                            td.text-center= url[i].time
+                                            td.text-left= url[i].url
+                                            //- td.text-left= url[i].pattern
+                                            td.text-left= 'private'
+                                            td.text-left= url[i].identifier
+                                            td
+                                                .text-center
+                                                    //- a#source_view(action='/click' name=url[i].identifier) source
+                                                    //-     button.btn.btn-info.btn-lg(type='submit')
+                                                    a#source_view.btn.btn-link.btn-sm(href='/click/'+url[i].identifier,role='submit',style='color : #1db090')
+                                                        p source
+                                                        |  code
+                                            td
+                                                .text-center
+                                                    a#link_view.btn.btn-link.btn-sm(href=url[i].url, role='submit',style='color : red')
+                                                        p link
+                                                        | page
+                                                        //- button.btn.btn-warning.btn-lg(type='submit')
+                                                        
+            |
+            hr
+            |
+            footer
+                .row
+                    .col-xs-9.col-xs-offset-1(width='25%', height='25%')
+                        img(src='../image/sface_logo2.jpeg',width='30%', height='30%')
+                        p &nbsp&nbsp&nbsp&nbsp&nbsp © 2018 Sface Corporation. All rights reserved.
+                        | &nbsp&nbsp&nbsp&nbsp&nbsp 12, Gangnam-daero 65-gil, Seocho-gu, Seoul,  Republic of Korea
+            script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js')
+            script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js')
+                            

@@ -1,0 +1,129 @@
+octype html
+html
+    head
+        meta(charset='UTF-8')
+        meta(name='viewport', content='width=device-width, initial-scale=1')
+        meta(name='description', content='')
+        meta(name='author', content='')
+        link(rel='icon', href='../image/favicon.ico')
+        title sface m-url
+        link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css')
+        link(href='/css/dashboard.css', rel='stylesheet')
+    body(data-spy='scroll', data-target='.scrollspy')
+        nav.navbar-inverse.navbar-fixed-top
+            .container-fluid
+                .navbar-header
+                    button.navbar-toggle.collapsed(type='button', data-toggle='collapse', data-target='#navbar', aria-expanded='false', aria-controls='navbar')
+                        span.sr-only Toggle navigation
+                        span.icon-bar
+                        span.icon-bar
+                        span.icon-bar
+                    a.navbar-brand(href='/main') SFACE
+                #navbar.navbar-collapse.collapse
+                    ul.nav.navbar-nav.navbar-right
+                        li
+                            a(href='/') URL Scan
+                        li
+                            a(href='#') Bitcoin Miner
+                        li
+                            a(href='#') File Analytics
+                        li
+                            a(href='#') Help
+                    form.navbar-form.navbar-right(action='/search', method='post')
+                        //- .form-group
+                        //-     .input-group
+                        //-         input.form-control(type='text', placeholder='Search...', name = 'id')
+                        //-         .input-group-btn
+                        //-             button.form-control.btn.btn-success.btn-sm.center-block(type='submit') search
+                        input.form-control(type='text', placeholder='Search...', name = 'id')
+                        button.form-control.btn.btn-defalut.test(type='submit',style='color : white; background-color: #1db989') Search
+        .container-fluid
+            .row
+                .col-sm-3.col-sm-1.sidebar
+                    ul.nav.nav-sidebar
+                        li
+                            a(href='/main') Main 
+                        li
+                            a(href='/') Url Scan
+                        li
+                            a(href='/miner')
+                                | Bitcoin Miner
+                                
+                        li.active
+                            a(href='#') Malicious Url
+                                span.sr-only (current)
+                        li
+                            a(href='#') File analytics
+                        li
+                            a(href='#') Product
+
+                .col-sm-9.col-sm-offset-1.col-md-10.col-md-offset-1.main
+                    h1.page-header Malicious URL List
+                    .table-responsive
+                        table#table.table
+                            thead.thead-dark
+                                tr
+                                    th.text-center #
+                                    th.text-center Time
+                                    th.text-left Url
+                                    th.text-left Pattern
+                                    th.text-left Identifier
+                                    th.text-left Source
+                                    th.text-left Link
+                            |
+                            tbody.thead-ligth
+                                - if(url && range1 && range2)
+                                    //- h3 1
+                                    //- -for (var i =0; i < url.length; i++)
+                                    -for (var i = range1; i < range2; i++)
+                                        tr.fuck
+                                            td.text-center= i
+                                            td.text-center= url[i].time
+                                            td.text-left= url[i].url
+                                            //- td.text-left= url[i].pattern
+                                            td.text-left= 'private'
+                                            td.text-left= url[i].identifier
+                                            td
+                                                .text-center
+                                                    //- a#source_view(action='/click' name=url[i].identifier) source
+                                                    //-     button.btn.btn-info.btn-lg(type='submit')
+                                                    a#source_view.btn.btn-link.btn-sm(href='/click/'+url[i].identifier,role='submit',style='color : #1db090')
+                                                        p source
+                                                        |  code
+                                            td
+                                                .text-center
+                                                    a#link_view.btn.btn-link.btn-sm(href=url[i].url, role='submit',style='color : red')
+                                                        p link
+                                                        | page
+                                                        //- button.btn.btn-warning.btn-lg(type='submit')
+                                - else if(tp== "search")
+                                    h3 Search
+                                    console.log('f', url.length)
+                                        tr.fuck
+                                            td.danger= 0
+                                            td= url.time
+                                            td= url.url
+                                            td= url.pattern
+                                            td= url.identifier
+                                - else
+                                    h3 Empty 
+                                    //- tr.fuck
+                                    //-     td=''
+                                    //-     td=''
+                                    //-     td=''
+                                    //-     td=''
+
+                            |
+                        div.text-center
+                            ul#pp.pagination.pagination-sm.pagination-success
+                                li#1.actvie
+                                    a(href='/malurl/1') 1
+                                li#2
+                                    a(href='/malurl/2') 2
+                                li#3
+                                    a(href='/malurl/3') 3
+                                li#4
+                                    a(href='/malurl/4') 4
+                                li#5
+                                    a(href='/malurl/5') 5
+                            

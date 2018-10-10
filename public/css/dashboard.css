@@ -1,0 +1,210 @@
+/*
+ * Base structure
+ */
+
+/* Move down content because we have a fixed navbar that is 50px tall */
+body {
+  padding-top: 50px;
+  background-color: #ffffff;
+  padding-bottom: 100px;
+}
+
+
+.navbar-nav {
+  color : #1db989
+}
+.navbar-brand {
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  color:  black;
+  background-color: white;
+}
+.container-fluid{
+  background-color: white;
+}
+
+.navbar-inverse  .navbar-header  {
+  color: white;
+  background-color: white;
+} 
+/*
+ * Global add-ons
+ */
+
+.sub-header {
+  /* margin-left: -50px; */
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+
+/*
+ * Top navigation
+ * Hide default border to remove 1px line.
+ */
+.navbar-fixed-top {
+  border: 0;
+}
+
+
+/*
+ * Sidebar
+ */
+
+/* Hide for mobile, show later */
+.sidebar {
+  display: none;
+}
+@media (min-width: 768px) {
+  .sidebar {
+    position: fixed;
+    top: 51px;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    display: block;
+    padding: 20px;
+    overflow-x: hidden;
+    overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+    background-color: white;
+    border-right: 0px solid #eee;
+  }
+}
+
+/* Sidebar navigation */
+.nav-sidebar {
+  margin-top : 30px;
+  margin-right: -10px; /* 20px padding + 1px border */
+  margin-bottom: 10px;
+  margin-left: -10px;
+  font-size: 15px;
+}
+.nav-sidebar > li > a {
+  padding-right: 10px;
+  padding-left: 10px;
+  /* background-color: #fff */
+  color: #1db989
+}
+.nav-sidebar > .active > a,
+.nav-sidebar > .active > a:hover,
+.nav-sidebar > .active > a:focus {
+  color: #fff;
+  background-color: #1db989;
+}
+
+
+/*
+ * Main content
+ */
+
+.main {
+  padding: 20px;
+  background-color: #ffffff
+}
+@media (min-width: 768px) {
+  .main {
+    padding-right: 40px;
+    padding-left: 40px;
+  }
+}
+.main .page-header {
+  margin-top: 0;
+  background: #ffffff;
+  /* margin-left: -100px; */
+}
+
+
+/*
+ * Placeholder dashboard ideas
+ */
+
+.placeholders {
+  margin-bottom: 30px;
+  text-align: center;
+  background-color: #ffffff
+}
+.placeholders h4 {
+  margin-bottom: 0;
+}
+.placeholder {
+  margin-bottom: 20px;
+}
+.placeholder img {
+  display: inline-block;
+  border-radius: 50%;
+}
+
+/*
+  pagination
+*/
+
+.pagination {
+  height: 36px;
+  margin: 18px 0;
+  color : #1db989;
+}
+
+.pagination ul {
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+}
+
+.pagination li {
+  display: inline;
+}
+.pagination li a {
+  color: black;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+.pagination li.active a {
+  background-color: #1db989;
+  color: white;
+}
+.pagination li:hover:not(.active) a {
+  background-color: #ddd;
+}
+
+
+
+
+.btn-defalut.test {
+  background-color: lightgoldenrodyellow;
+  color: #000000
+
+
+}
+
+
+
+
+
+
+#main_text  {
+  font-size: 25px;
+  text-align: center;
+  color: #778899;
+}
+#sub_text {
+  font-size : 20px;
+  text-align: center;
+  color: #ddd;
+}
+#sub_text2 {
+  font-size : 15px;
+  text-align: center;
+  color: teal;
+}
+#test {
+  width: "500px";
+  height: "500px";
+
+}
+
+.col-xs-4 > a > img:focus,
+.col-xs-4 > a > img:hover {
+  /* color: #fff; */
+  background-color: #ddd;
+}
